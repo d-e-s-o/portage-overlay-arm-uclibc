@@ -1,0 +1,13 @@
+diff --git a/src/Makefile.in b/src/Makefile.in
+index d846ea..4378dd 100644
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -505,7 +505,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)/libmisc
+ 
+ suidbins = su
+-suidubins = chage chfn chsh expiry gpasswd newgrp passwd newuidmap newgidmap
++suidubins = chage chfn chsh expiry gpasswd newgrp passwd
+ @WITH_TCB_TRUE@shadowsgidubins = passwd
+ LDADD = $(INTLLIBS) \
+ 		 $(LIBTCB) \

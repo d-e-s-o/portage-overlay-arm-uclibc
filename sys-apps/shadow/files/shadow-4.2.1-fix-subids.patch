@@ -1,0 +1,42 @@
+diff --git a/src/usermod.c b/src/usermod.c
+index e7d435..34413b 100644
+--- a/src/usermod.c
++++ b/src/usermod.c
+@@ -1354,35 +1354,37 @@ static void process_flags (int argc, char **argv)
+ 	}
+ 
+ 	/* local, no need for xgetpwuid */
+ 	if (uflg && !oflg && (getpwuid (user_newid) != NULL)) {
+ 		fprintf (stderr,
+ 		         _("%s: UID '%lu' already exists\n"),
+ 		         Prog, (unsigned long) user_newid);
+ 		exit (E_UID_IN_USE);
+ 	}
+ 
++#ifdef ENABLE_SUBIDS
+ 	if (   (vflg || Vflg)
+ 	    && !is_sub_uid) {
+ 		fprintf (stderr,
+ 		         _("%s: %s does not exist, you cannot use the flags %s or %s\n"),
+ 		         Prog, sub_uid_dbname (), "-v", "-V");
+ 		exit (E_USAGE);
+ 	}
+ 
+ 	if (   (wflg || Wflg)
+ 	    && !is_sub_gid) {
+ 		fprintf (stderr,
+ 		         _("%s: %s does not exist, you cannot use the flags %s or %s\n"),
+ 		         Prog, sub_gid_dbname (), "-w", "-W");
+ 		exit (E_USAGE);
+ 	}
++#endif
+ }
+ 
+ /*
+  * close_files - close all of the files that were opened
+  *
+  *	close_files() closes all of the files that were opened for this new
+  *	user. This causes any modified entries to be written out.
+  */
+ static void close_files (void)
+ {
