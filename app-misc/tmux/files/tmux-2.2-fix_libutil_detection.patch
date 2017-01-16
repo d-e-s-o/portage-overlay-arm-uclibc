@@ -1,0 +1,12 @@
+diff --git a/configure b/configure
+index 300c80..8baed6 100755
+--- a/configure
++++ b/configure
+@@ -5352,7 +5352,6 @@ $as_echo "no" >&6; }
+ 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for b64_ntop with -lresolv" >&5
+ $as_echo_n "checking for b64_ntop with -lresolv... " >&6; }
+-	LIBS="$LIBS -lresolv"
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
