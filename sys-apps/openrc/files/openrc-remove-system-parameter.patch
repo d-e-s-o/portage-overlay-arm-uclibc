@@ -1,0 +1,13 @@
+diff --git init.d/sysctl.in init.d/sysctl.in
+index cb756f..fba62b 100644
+--- a/init.d/sysctl.in
++++ b/init.d/sysctl.in
+@@ -41,7 +41,7 @@ Linux_sysctl()
+ 	local quiet
+ 	yesno $rc_verbose || quiet=-q
+ 
+-	sysctl ${quiet} --system
++	sysctl ${quiet}
+ }
+ 
+ start()
