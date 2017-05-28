@@ -1,0 +1,17 @@
+diff --git src/Makefile.in src/Makefile.in
+index 243fda..ced10d 100644
+--- src/Makefile.in
++++ src/Makefile.in
+@@ -120,10 +120,10 @@ am__objects_1 = boot.$(OBJEXT) check.$(OBJEXT) common.$(OBJEXT) \
+ 	charconv.$(OBJEXT)
+ am_fatlabel_OBJECTS = fatlabel.$(OBJEXT) $(am__objects_1)
+ fatlabel_OBJECTS = $(am_fatlabel_OBJECTS)
+-fatlabel_LDADD = $(LDADD)
++fatlabel_LDADD = $(LDADD) -liconv
+ am_fsck_fat_OBJECTS = fsck.fat.$(OBJEXT) $(am__objects_1)
+ fsck_fat_OBJECTS = $(am_fsck_fat_OBJECTS)
+-fsck_fat_LDADD = $(LDADD)
++fsck_fat_LDADD = $(LDADD) -liconv
+ am__dirstamp = $(am__leading_dot)dirstamp
+ am__objects_2 = mkfs_fat-device_info.$(OBJEXT) \
+ 	blkdev/mkfs_fat-blkdev.$(OBJEXT) \
