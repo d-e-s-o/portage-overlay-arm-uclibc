@@ -1,0 +1,13 @@
+diff --git rc/openrc-init.c rc/openrc-init.c
+index eb346f..6dd60a 100644
+--- a/src/rc/openrc-init.c
++++ b/src/rc/openrc-init.c
+@@ -203,8 +203,6 @@ int main(int argc, char **argv)
+ 		printf("PID1: Received \"%s\" from FIFO...\n", buf);
+ 		if (strcmp(buf, "halt") == 0)
+ 			handle_shutdown("shutdown", RB_HALT_SYSTEM);
+-		else if (strcmp(buf, "kexec") == 0)
+-			handle_shutdown("reboot", RB_KEXEC);
+ 		else if (strcmp(buf, "poweroff") == 0)
+ 			handle_shutdown("shutdown", RB_POWER_OFF);
+ 		else if (strcmp(buf, "reboot") == 0)
