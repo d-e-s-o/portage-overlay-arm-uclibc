@@ -1,0 +1,11 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -5023,7 +5023,7 @@ pr = progs-readme
+ @CROSS_COMPILING_FALSE@cu_install_program = src/ginstall
+
+ # Use the just-built 'ginstall', when not cross-compiling.
+-@CROSS_COMPILING_TRUE@cu_install_program = @INSTALL_PROGRAM@
++@CROSS_COMPILING_TRUE@cu_install_program = /usr/bin/install
+ info_TEXINFOS = doc/coreutils.texi
+ doc_coreutils_TEXINFOS = \
+   doc/perm.texi \
